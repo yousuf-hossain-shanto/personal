@@ -16,6 +16,7 @@ permalink: /:title/
 collections:
   - jobs
   - services
+  - testimonials
 
 # Contacts
 contacts:
@@ -26,24 +27,24 @@ contacts:
 # Socials
 socials:
   - name: facebook
-    url: #
+    url: https://facebook.com/yhshanto
   - name: twitter
-    url: #
+    url: https://facebook.com/yhshanto
 
 # Barands
 brands:
   - name: Brand
     link: #
-    logo: img/brand/b1.png
+    logo: assets/img/brand/b1.png
   - name: Brand
     link: #
-    logo: img/brand/b2.png
+    logo: assets/img/brand/b2.png
   - name: Brand
     link: #
-    logo: img/brand/b3.png
+    logo: assets/img/brand/b3.png
   - name: Brand
     link: #
-    logo: img/brand/b4.png
+    logo: assets/img/brand/b4.png
 
 # Authors
 authors:

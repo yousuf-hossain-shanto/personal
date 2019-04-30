@@ -42,7 +42,7 @@ title: Home
                     <div class="row align-items-center active-brand-carusel justify-content-start no-gutters">
                         {% for brand in site.brands %}
                         <div class="col single-brand">
-                            <a href="{{ brand.link }}"><img class="mx-auto" src="{{ brand.logo }}" alt="{{ brand.name }}"></a>
+                            <a href="{{ brand.link }}"><img class="mx-auto" src='{{% if brand.logo contains "://" %}{{ brand.logo }}{% else %}{{ brand.logo | absolute_url }}{% endif %}' alt="{{ brand.name }}"></a>
                         </div>
                         {% endfor %}
                     </div>
@@ -235,10 +235,11 @@ title: Home
         <section class="testimonials_area section-gap">
             <div class="container">
                 <div class="testi_slider owl-carousel">
+                    {% for testimonial in site.testimonials %}
                     <div class="item">
                         <div class="testi_item">
-                            <img src="img/quote.png" alt="">
-                            <h4>Fanny Spencer</h4>
+                            <img src="{{ site.baseurl }}/assets/img/quote.png" alt="quote">
+                            <h4>{{ testimonial.name }}</h4>
                             <ul class="list">
                                 <li><a href="#"><i class="fa fa-star"></i></a></li>
                                 <li><a href="#"><i class="fa fa-star"></i></a></li>
@@ -248,50 +249,12 @@ title: Home
                             </ul>
                             <div class="wow fadeIn" data-wow-duration="1s">
                                 <p>
-                                    As conscious traveling Paup ers we must always be oncerned about our dear Mother Earth. If you think about it, you travel
-                                    across her face <br> and She is the host to your journey.
+                                    {{ testimonial.content }}
                                 </p>
                             </div>
                         </div>
                     </div>
-                    <div class="item">
-                        <div class="testi_item">
-                            <img src="img/quote.png" alt="">
-                            <h4>Fanny Spencer</h4>
-                            <ul class="list">
-                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                            </ul>
-                            <div class="wow fadeIn" data-wow-duration="1s">
-                                <p>
-                                    As conscious traveling Paup ers we must always be oncerned about our dear Mother Earth. If you think about it, you travel
-                                    across her face <br> and She is the host to your journey.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="testi_item">
-                            <img src="img/quote.png" alt="">
-                            <h4>Fanny Spencer</h4>
-                            <ul class="list">
-                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                            </ul>
-                            <div class="wow fadeIn" data-wow-duration="1s">
-                                <p>
-                                    As conscious traveling Paup ers we must always be oncerned about our dear Mother Earth. If you think about it, you travel
-                                    across her face <br> and She is the host to your journey.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
+                    {% endfor %}
                 </div>
             </div>
         </section>

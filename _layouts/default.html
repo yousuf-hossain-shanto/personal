@@ -41,8 +41,8 @@
 				<div id="logo">
 					<a href="{{ site.baseurl }}"><img src="{{ site.baseurl }}/logo.png" alt="{{site.name}}" /></a>
 				</div>
-				<nav id="nav-menu-container">
-					<ul {% if page.url != "/" %} class="nav-menu" {% else %} class="nav-menu white" {% endif %}>
+				<nav id="nav-menu-container" {% if page.url != "/" %} class="ml-auto" {% endif %}>
+					<ul {% if page.url == "/" %} class="nav-menu" {% else %} class="nav-menu white" {% endif %}>
 						<li class="">
                             {% if page.url == "/" %}
                             <a class="active" href="{{ site.baseurl | absolute_url }}">Home</a>

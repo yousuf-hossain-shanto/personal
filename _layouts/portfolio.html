@@ -1,0 +1,60 @@
+---
+layout: page
+---
+
+
+        <!-- Start Work Area Area -->
+        <section class="work-area section-gap-top section-gap-bottom-90" id="work">
+                <div class="container">
+                    <div class="row d-flex justify-content-between align-items-end mb-80">
+                        <div class="col-lg-6">
+                            <div class="section-title">
+                                <h2>Latest Works</h2>
+                                <p>If you are looking at blank cassettes on the web, you may be very confused at the difference in price. You may see
+                                    some for as low as $.17 each.</p>
+                            </div>
+                        </div>
+        
+                        <div class="col-lg-6">
+                            <div class="filters">
+                                <ul>
+                                    <li class="active" data-filter=".all">All Categories</li>
+                                    {% assign categories_list = site.categories %}
+                                    {% if categories_list.first[0] == null %}
+                                        {% for category in categories_list %}
+                                        <li data-filter=".{{ category | slugify }}">{{ category }} ({{ site.tags[category].size }})</li>
+                                        {% endfor %}
+                                    {% else %}
+                                        {% for category in categories_list %}
+                                        <li data-filter=".{{ category[0] | slugify }}">{{ category[0] }} ({{ category[1].size }})</li>
+                                        {% endfor %}
+                                    {% endif %}
+                                    {% assign categories_list = nil %}
+    
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <div class="filters-content">
+                        <div class="row grid">
+                            {% for post in site.posts %}
+                            <div class="single-work col-lg-4 col-md-6 col-sm-12 all {% if post.categories.first[0] == null %}{% for category in post.categories %}{{ category | slugify }} {% endfor %}{% else %}{% for category in post.categories %}{{ category[0] | slugify }} {% endfor %}{% endif %} wow fadeInUp" data-wow-duration="2s" data-wow-delay="0.2s">
+                                <div class="relative">
+                                    <div class="thumb">
+                                        <div class="overlay overlay-bg"></div>
+                                        <img class="image img-fluid" src='{% if post.image contains "://" %}{{ post.image }}{% else %}{{ post.image | absolute_url }}{% endif %}' alt="{{ post.title }}">
+                                    </div>
+                                    <div class="middle">
+                                        <h4>{{ post.title }}</h4>
+                                        <div class="cat">{{ post.type }}</div>
+                                    </div>
+                                    <a class="overlay" href="{{ post.url | absolute_url }}"></a>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- End Work Area Area -->

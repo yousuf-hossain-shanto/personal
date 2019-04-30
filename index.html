@@ -42,7 +42,7 @@ title: Home
                     <div class="row align-items-center active-brand-carusel justify-content-start no-gutters">
                         {% for brand in site.brands %}
                         <div class="col single-brand">
-                            <a href="{{ brand.link }}"><img class="mx-auto" src='{{% if brand.logo contains "://" %}{{ brand.logo }}{% else %}{{ brand.logo | absolute_url }}{% endif %}' alt="{{ brand.name }}"></a>
+                            <a href="{{ brand.link }}"><img class="mx-auto" src='{% if brand.logo contains "://" %}{{ brand.logo }}{% else %}{{ brand.logo | absolute_url }}{% endif %}' alt="{{ brand.name }}"></a>
                         </div>
                         {% endfor %}
                     </div>

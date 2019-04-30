@@ -2176,7 +2176,9 @@ body.mobile-nav-active #mobile-nav-toggle {
       display: none; } }
   @media (max-width: 1480px) {
     .banner-img img {
-      max-width: 80%; } }
+      /*max-width: 80%; */
+    } 
+  }
 
 .brand-wrap {
   background: #fff;

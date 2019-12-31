@@ -50,29 +50,6 @@ title: Home
 </section>
 <!-- End banner Area -->
 
-<!-- Start brands Area -->
-<section class="brands-area">
-  <div class="container">
-    <div class="brand-wrap">
-      <div
-        class="row align-items-center active-brand-carusel justify-content-start no-gutters"
-      >
-        {% for brand in site.brands %}
-        <div class="col single-brand">
-          <a href="{{ brand.link }}"
-            ><img
-              class="mx-auto"
-              src='{% if brand.logo contains "://" %}{{ brand.logo }}{% else %}{{ brand.logo | absolute_url }}{% endif %}'
-              alt="{{ brand.name }}"
-          /></a>
-        </div>
-        {% endfor %}
-      </div>
-    </div>
-  </div>
-</section>
-<!-- End brands Area -->
-
 <!-- Start About Area -->
 <section class="about-area section-gap">
   <div class="container">

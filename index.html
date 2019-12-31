@@ -3,247 +3,305 @@ layout: default
 title: Home
 ---
 
-	<!-- start banner Area -->
-	<section class="home-banner-area">
-            <div class="container">
-                <div class="row fullscreen d-flex align-items-center">
-                    <div class="banner-content col-lg-6 col-md-12 justify-content-center ">
-                        <div class="me wow fadeInDown" data-wow-duration="1s" data-wow-delay="1.2s">It's me</div>
-                        <h1 class="wow fadeInUp" data-wow-duration="1s" data-wow-delay="1.7s">Yousuf Hossain</h1>
-                        <div class="designation mb-50 wow fadeInUp" data-wow-duration="1s" data-wow-delay="2.1s">
-                            Full Stack
-                            <span class="designer">PHP</span>
-                            and Javascript
-                            <span class="developer">Developer</span>
-                        </div>
-                        <a href="{{ site.hire-url }}" class="primary-btn" data-text="Hire Me">
-                            <span>H</span>
-                            <span>i</span>
-                            <span>r</span>
-                            <span>e</span>
-                            <span> </span>
-                            <span>M</span>
-                            <span>e</span>
-                        </a>
-                    </div>
-                    <div class="banner-img col-lg-6 col-md-6 align-self-end">
-                        <img class="img-fluid" src="{{ site.baseurl }}/assets/img/banner-img.png" alt="{{ site.name }}">
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- End banner Area -->
-    
-    
-        <!-- Start brands Area -->
-        <section class="brands-area">
-            <div class="container">
-                <div class="brand-wrap">
-                    <div class="row align-items-center active-brand-carusel justify-content-start no-gutters">
-                        {% for brand in site.brands %}
-                        <div class="col single-brand">
-                            <a href="{{ brand.link }}"><img class="mx-auto" src='{% if brand.logo contains "://" %}{{ brand.logo }}{% else %}{{ brand.logo | absolute_url }}{% endif %}' alt="{{ brand.name }}"></a>
-                        </div>
-                        {% endfor %}
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- End brands Area -->
-    
-    
-        <!-- Start About Area -->
-        <section class="about-area section-gap">
-            <div class="container">
-                <div class="row align-items-center justify-content-between">
-                    <div class="col-lg-6 about-left">
-                        <img class="img-fluid" src="{{ site.baseurl }}/assets/img/about-img.png" alt="{{ site.name }}">
-                    </div>
-                    <div class="col-lg-5 col-md-12 about-right">
-                        <div class="section-title">
-                            <h2>about myself</h2>
-                        </div>
-                        <div class="mb-50 wow fadeIn" data-wow-duration=".8s">
-                            <p>
-                                I am an expert PHP and JavaScript developer with strong problem-solving skill. In my 2 year+ development career I have developed about 50+ web application and solved many complicated problems.
-                            </p>
-                            <p>
-                                I am using WordPress to create an immediate and highly customizable website. For custom and very complex functional website (LIKE investment platform, gambling, etc) I have already created some WordPress plugin. So it's not a matter for me that extend WordPress with any functionality easy or complex.
-                            </p>
-                        </div>
-                        <a href="{{ site.baseurl }}/about" class="primary-btn white" data-text="More Info">
-                            <span>M</span>
-                            <span>o</span>
-                            <span>r</span>
-                            <span>e</span>
-                            <span> </span>
-                            <span>I</span>
-                            <span>n</span>
-                            <span>f</span>
-                            <span>o</span>
-                        </a>
-                        <a href="{{ site.baseurl }}/resume.pdf" class="primary-btn" data-text="Resume" download>
-                            <span>R</span>
-                            <span>e</span>
-                            <span>s</span>
-                            <span>u</span>
-                            <span>m</span>
-                            <span>e</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- End About Area -->
-    
-    
-        <!-- Start Work Area Area -->
-        <section class="work-area section-gap-top section-gap-bottom-90" id="work">
-            <div class="container">
-                <div class="row d-flex justify-content-between align-items-end mb-80">
-                    <div class="col-lg-6">
-                        <div class="section-title">
-                            <h2>Latest Works</h2>
-                        </div>
-                    </div>
-    
-                    <div class="col-lg-6">
-                        <div class="filters">
-                            <ul>
-                                <li class="active" data-filter=".all">All Categories</li>
-                                {% assign categories_list = site.categories %}
-                                {% if categories_list.first[0] == null %}
-                                    {% for category in categories_list %}
-                                    <li data-filter=".{{ category | slugify }}">{{ category }} ({{ site.tags[category].size }})</li>
-                                    {% endfor %}
-                                {% else %}
-                                    {% for category in categories_list %}
-                                    <li data-filter=".{{ category[0] | slugify }}">{{ category[0] }} ({{ category[1].size }})</li>
-                                    {% endfor %}
-                                {% endif %}
-                                {% assign categories_list = nil %}
+<!-- start banner Area -->
+<section class="home-banner-area">
+  <div class="container">
+    <div class="row fullscreen d-flex align-items-center">
+      <div class="banner-content col-lg-6 col-md-12 justify-content-center ">
+        <div
+          class="me wow fadeInDown"
+          data-wow-duration="1s"
+          data-wow-delay="1.2s"
+        >
+          It's me
+        </div>
+        <h1 class="wow fadeInUp" data-wow-duration="1s" data-wow-delay="1.7s">
+          Yousuf Hossain
+        </h1>
+        <div
+          class="designation mb-50 wow fadeInUp"
+          data-wow-duration="1s"
+          data-wow-delay="2.1s"
+        >
+          Professional
+          <span class="designer">PHP</span>
+          and Javascript
+          <span class="developer">Developer</span>
+        </div>
+        <a href="{{ site.hire-url }}" class="primary-btn" data-text="Hire Me">
+          <span>H</span>
+          <span>i</span>
+          <span>r</span>
+          <span>e</span>
+          <span> </span>
+          <span>M</span>
+          <span>e</span>
+        </a>
+      </div>
+      <div class="banner-img col-lg-6 col-md-6 align-self-end">
+        <img
+          class="img-fluid"
+          src="{{ site.baseurl }}/assets/img/banner-img.png"
+          alt="{{ site.name }}"
+        />
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End banner Area -->
 
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-    
-                <div class="filters-content">
-                    <div class="row grid">
-                        {% for post in site.posts %}
-                        <div class="single-work col-lg-4 col-md-6 col-sm-12 all {% if post.categories.first[0] == null %}{% for category in post.categories %}{{ category | slugify }} {% endfor %}{% else %}{% for category in post.categories %}{{ category[0] | slugify }} {% endfor %}{% endif %} wow fadeInUp" data-wow-duration="2s" data-wow-delay="0.2s">
-                            <div class="relative">
-                                <div class="thumb">
-                                    <div class="overlay overlay-bg"></div>
-                                    <img class="image img-fluid" src='{% if post.image contains "://" %}{{ post.image }}{% else %}{{ post.image | absolute_url }}{% endif %}' alt="{{ post.title }}">
-                                </div>
-                                <div class="middle">
-                                    <h4>{{ post.title }}</h4>
-                                    <div class="cat">{{ post.type }}</div>
-                                </div>
-                                <a class="overlay" href="{{ post.url | absolute_url }}"></a>
-                            </div>
-                        </div>
-                        {% endfor %}
-                    </div>
-                </div>
+<!-- Start brands Area -->
+<section class="brands-area">
+  <div class="container">
+    <div class="brand-wrap">
+      <div
+        class="row align-items-center active-brand-carusel justify-content-start no-gutters"
+      >
+        {% for brand in site.brands %}
+        <div class="col single-brand">
+          <a href="{{ brand.link }}"
+            ><img
+              class="mx-auto"
+              src='{% if brand.logo contains "://" %}{{ brand.logo }}{% else %}{{ brand.logo | absolute_url }}{% endif %}'
+              alt="{{ brand.name }}"
+          /></a>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End brands Area -->
+
+<!-- Start About Area -->
+<section class="about-area section-gap">
+  <div class="container">
+    <div class="row align-items-center justify-content-between">
+      <div class="col-lg-6 about-left">
+        <img
+          class="img-fluid"
+          src="{{ site.baseurl }}/assets/img/about-img.png"
+          alt="{{ site.name }}"
+        />
+      </div>
+      <div class="col-lg-5 col-md-12 about-right">
+        <div class="section-title">
+          <h2>about myself</h2>
+        </div>
+        <div class="mb-50 wow fadeIn" data-wow-duration=".8s">
+          <p>
+            I am an expert PHP and JavaScript developer with strong
+            problem-solving skill. In my 2.5 year+ development career I have
+            developed about 50+ web application and solved many complicated
+            problems.
+          </p>
+          <p>
+            I am using WordPress to create an immediate and highly customizable
+            website. For custom and very complex functional website (LIKE
+            investment platform, gambling, etc) I have already created some
+            WordPress plugin. So it's not a matter for me that extend WordPress
+            with any functionality easy or complex.
+          </p>
+        </div>
+        <a
+          href="{{ site.baseurl }}/about"
+          class="primary-btn white"
+          data-text="More Info"
+        >
+          <span>M</span>
+          <span>o</span>
+          <span>r</span>
+          <span>e</span>
+          <span> </span>
+          <span>I</span>
+          <span>n</span>
+          <span>f</span>
+          <span>o</span>
+        </a>
+        <a
+          href="{{ site.baseurl }}/resume.pdf"
+          class="primary-btn"
+          data-text="Resume"
+          download
+        >
+          <span>R</span>
+          <span>e</span>
+          <span>s</span>
+          <span>u</span>
+          <span>m</span>
+          <span>e</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End About Area -->
+
+<!-- Start Work Area Area -->
+<section class="work-area section-gap-top section-gap-bottom-90" id="work">
+  <div class="container">
+    <div class="row d-flex justify-content-between align-items-end mb-80">
+      <div class="col-lg-6">
+        <div class="section-title">
+          <h2>Latest Works</h2>
+        </div>
+      </div>
+
+      <div class="col-lg-6">
+        <div class="filters">
+          <ul>
+            <li class="active" data-filter=".all">All Categories</li>
+            {% assign categories_list = site.categories %} {% if
+            categories_list.first[0] == null %} {% for category in
+            categories_list %}
+            <li data-filter=".{{ category | slugify }}">
+              {{ category }} ({{ site.tags[category].size }})
+            </li>
+            {% endfor %} {% else %} {% for category in categories_list %}
+            <li data-filter=".{{ category[0] | slugify }}">
+              {{ category[0] }} ({{ category[1].size }})
+            </li>
+            {% endfor %} {% endif %} {% assign categories_list = nil %}
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="filters-content">
+      <div class="row grid">
+        {% for post in site.posts %}
+        <div
+          class="single-work col-lg-4 col-md-6 col-sm-12 all {% if post.categories.first[0] == null %}{% for category in post.categories %}{{ category | slugify }} {% endfor %}{% else %}{% for category in post.categories %}{{ category[0] | slugify }} {% endfor %}{% endif %} wow fadeInUp"
+          data-wow-duration="2s"
+          data-wow-delay="0.2s"
+        >
+          <div class="relative">
+            <div class="thumb">
+              <div class="overlay overlay-bg"></div>
+              <img
+                class="image img-fluid"
+                src='{% if post.image contains "://" %}{{ post.image }}{% else %}{{ post.image | absolute_url }}{% endif %}'
+                alt="{{ post.title }}"
+              />
             </div>
-        </section>
-        <!-- End Work Area Area -->
-    
-    
-        <!-- Start Job History Area Area -->
-        <section class="job-area section-gap-top section-gap-bottom-90">
-            <div class="container">
-                <div class="row d-flex">
-                    <div class="col-lg-12">
-                        <div class="section-title">
-                            <h2>Job History</h2>
-                        </div>
-                    </div>
-                </div>
-    
-                <div class="row">
-                    {% for job in site.jobs %}
-                    <div class="col-lg-6">
-                        <div class="single-job">
-                            <div class="top-sec d-flex justify-content-between">
-                                <div class="top-left">
-                                    <h4>{{ job.title }}</h4>
-                                    <p>{{ job.company }}</p>
-                                </div>
-                                <div class="top-right">
-                                    <a href="#" class="primary-btn" data-text="{{ job.start }} to {{ job.end }}">
-                                        {{ job.animated }}
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="bottom-sec wow fadeIn" data-wow-duration="2s">
-                                {{ job.content }}
-                            </div>
-                        </div>
-                    </div>
-    
-                    {% endfor %}
-                </div>
+            <div class="middle">
+              <h4>{{ post.title }}</h4>
+              <div class="cat">{{ post.type }}</div>
             </div>
-        </section>
-        <!-- End Job Historyt Area Area -->
-    
-    
-        <!-- Start Service Area -->
-        <section class="service-area section-gap">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="section-title">
-                            <h2>Service Offers</h2>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    {% for service in site.services %}
-                    <div class="col-lg-3 col-md-6">
-                        <div class="single-service wow fadeInUp" data-wow-duration="1s">
-                            <span class="lnr lnr-{{ service.icon }}"></span>
-                            <h4>
-                                {{ service.title }}
-                            </h4>
-                            <p>{{ service.content }}</p>
-                        </div>
-                    </div>
-                    {% endfor %}
-                </div>
+            <a class="overlay" href="{{ post.url | absolute_url }}"></a>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Work Area Area -->
+
+<!-- Start Job History Area Area -->
+<section class="job-area section-gap-top section-gap-bottom-90">
+  <div class="container">
+    <div class="row d-flex">
+      <div class="col-lg-12">
+        <div class="section-title">
+          <h2>Job History</h2>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      {% for job in site.jobs %}
+      <div class="col-lg-6">
+        <div class="single-job">
+          <div class="top-sec d-flex justify-content-between">
+            <div class="top-left">
+              <h4>{{ job.title }}</h4>
+              <p>{{ job.company }}</p>
             </div>
-        </section>
-        <!-- End Service Area -->
-    
-    
-        <!-- Start Testimonials Area -->
-        <section class="testimonials_area section-gap">
-            <div class="container">
-                <div class="testi_slider owl-carousel">
-                    {% for testimonial in site.testimonials %}
-                    <div class="item">
-                        <div class="testi_item">
-                            <img src="{{ site.baseurl }}/assets/img/quote.png" alt="quote">
-                            <h4>{{ testimonial.name }}</h4>
-                            <ul class="list">
-                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                            </ul>
-                            <div class="wow fadeIn" data-wow-duration="1s">
-                                <p>
-                                    {{ testimonial.content }}
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    {% endfor %}
-                </div>
+            <div class="top-right">
+              <a
+                href="#"
+                class="primary-btn"
+                data-text="{{ job.start }} to {{ job.end }}"
+              >
+                {{ job.animated }}
+              </a>
             </div>
-        </section>
-        <!-- End Testimonials Area -->
+          </div>
+          <div class="bottom-sec wow fadeIn" data-wow-duration="2s">
+            {{ job.content }}
+          </div>
+        </div>
+      </div>
+
+      {% endfor %}
+    </div>
+  </div>
+</section>
+<!-- End Job Historyt Area Area -->
+
+<!-- Start Service Area -->
+<section class="service-area section-gap">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="section-title">
+          <h2>Service Offers</h2>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      {% for service in site.services %}
+      <div class="col-lg-3 col-md-6">
+        <div class="single-service wow fadeInUp" data-wow-duration="1s">
+          <span class="lnr lnr-{{ service.icon }}"></span>
+          <h4>
+            {{ service.title }}
+          </h4>
+          <p>{{ service.content }}</p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+<!-- End Service Area -->
+
+<!-- Start Testimonials Area -->
+<section class="testimonials_area section-gap">
+  <div class="container">
+    <div class="testi_slider owl-carousel">
+      {% for testimonial in site.testimonials %}
+      <div class="item">
+        <div class="testi_item">
+          <img src="{{ site.baseurl }}/assets/img/quote.png" alt="quote" />
+          <h4>{{ testimonial.name }}</h4>
+          <ul class="list">
+            <li>
+              <a href="#"><i class="fa fa-star"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="fa fa-star"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="fa fa-star"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="fa fa-star"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="fa fa-star"></i></a>
+            </li>
+          </ul>
+          <div class="wow fadeIn" data-wow-duration="1s">
+            <p>
+              {{ testimonial.content }}
+            </p>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+<!-- End Testimonials Area -->

@@ -1,15 +1,15 @@
 # Site
 name: "Shanto"
 title: "An Artist"
-description: "Jekyll template, Medium styled, free for bloggers."
-logo: 'assets/images/logo.png'
-favicon: 'assets/images/logo.png'
+description: "Shanto, A professional PHP, Laravel and WordPress developer"
+logo: "assets/images/logo.png"
+favicon: "assets/images/logo.png"
 baseurl: /
-google_analytics: 'UA-46278016-1'
-disqus: 'yhshanto'
-twak: '5cc827ee2846b90c57ac2d29'
-hire-url: 'https://www.upwork.com/o/profiles/users/_~0113eadf4166290f85/'
-mailchimp-list: 'https://gmail.us20.list-manage.com/subscribe/post?u=d832ab6ac0e013530bbfd22fb&id=adc06e4460'
+google_analytics: "UA-46278016-1"
+disqus: "yhshanto"
+twak: "5cc827ee2846b90c57ac2d29"
+hire-url: "https://www.upwork.com/o/profiles/users/_~0113eadf4166290f85/"
+mailchimp-list: "https://gmail.us20.list-manage.com/subscribe/post?u=d832ab6ac0e013530bbfd22fb&id=adc06e4460"
 include: ["_pages"]
 permalink: /:title/
 
@@ -34,15 +34,15 @@ socials:
 
 # Barands
 brands:
-  - name: Brand
-    link: #
-    logo: assets/img/brand/b1.png
-  - name: Brand
-    link: #
-    logo: assets/img/brand/b2.png
-  - name: Brand
-    link: #
-    logo: assets/img/brand/b3.png
+  - name: Github
+    link: https://github.com/yousuf-hossain-shanto
+    logo: https://github.githubassets.com/images/modules/logos_page/GitHub-Logo.png
+  - name: Upwork
+    link: https://www.upwork.com/o/profiles/users/_~0113eadf4166290f85/
+    logo: https://www.upwork.com/images/upwork-logo-1200.png
+  - name: Envato
+    link: https://codecanyon.net/user/wptriangle
+    logo: http://assets.stickpng.com/thumbs/5847f374cef1014c0b5e487c.png
   - name: Brand
     link: #
     logo: assets/img/brand/b4.png
@@ -59,8 +59,8 @@ authors:
     description: "Author of Mediumish, a Bootstrap Medium styled template available for WordPress, HTML, Ghost and Jekyll. You are currently previewing Jekyll template demo."
   john:
     name: John
-    display_name: John    
-    avatar: 'assets/images/avatar.png'
+    display_name: John
+    avatar: "assets/images/avatar.png"
     gravatar: b1cc14991db7a456fcd761680bbc8f81
     email: wowthemesnet@gmail.com
     web: https://www.wowthemes.net
@@ -74,19 +74,19 @@ plugins:
   - jekyll-feed
   - jekyll-seo-tag
   - jekyll-archives
-    
+
 # Archives
 jekyll-archives:
   enabled:
     - categories
   layout: archive
   permalinks:
-    category: '/category/:name/'
-    
-# Pagination 
+    category: "/category/:name/"
+
+# Pagination
 paginate: 6
 paginate_path: /page:num/
-    
+
 # Other
 markdown: kramdown
 
